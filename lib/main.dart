@@ -1,5 +1,7 @@
+import 'package:decentralized_data_sample_app/models/activity.dart';
 import 'package:decentralized_data_sample_app/models/login.dart';
 import 'package:decentralized_data_sample_app/services/authenticator.dart';
+import 'package:decentralized_data_sample_app/services/storage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -39,6 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     // access file on google drive, onedrive
+    List<Activity> activities =
+        await Storage.getActivitiesFromPersonalCloud(user);
   }
 
   @override
