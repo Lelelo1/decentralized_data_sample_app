@@ -4,9 +4,9 @@ class Login {
   String personalCloudKey;
   Login(this.email, this.password, this.personalCloudKey);
 
-  static Login get _empty => Login('', '', '');
-  static bool isEmpty(Login login) =>
-      login.email == _empty.email &&
-      login.password == _empty.password &&
-      login.personalCloudKey == _empty.personalCloudKey;
+  static Login get empty => Login('', '', '');
+  static bool exists(Login login) =>
+      login.email != empty.email &&
+      login.password != empty.password &&
+      login.personalCloudKey != empty.personalCloudKey;
 }
