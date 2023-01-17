@@ -1,3 +1,5 @@
+import 'package:decentralized_data_sample_app/models/login.dart';
+import 'package:decentralized_data_sample_app/services/authenticator.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,7 +31,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void _useApp() {}
+  void _useApp() async {
+    var user = AuthenticatorService.user;
+    if (!Login.exists(user)) {
+      user = await AuthenticatorService.createUser(
+          'textinputemail', 'textinputpassword');
+    }
+
+    // access file on google drive, onedrive
+  }
 
   @override
   Widget build(BuildContext context) {
