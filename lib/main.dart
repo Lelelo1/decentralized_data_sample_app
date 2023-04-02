@@ -34,7 +34,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   void _useApp() async {
-    var user = AuthenticatorService.user;
+    var user = AuthenticatorService.user; // email
     if (!Login.exists(user)) {
       user = await AuthenticatorService.createUser(
           'textinputemail', 'textinputpassword');
